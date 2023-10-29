@@ -1,10 +1,18 @@
-import React from 'react';
-import DailyQuestion from './components/DailyQuestions';
+import React, { useState } from 'react';
+import DailyQuestion from './components/DailyQuestion';
+import QuestionSetter from './components/QuestionSetter';
+
 
 function App() {
+    const [currentQuestion, setCurrentQuestion] = useState(null);
+
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-            <DailyQuestion />
+        <div>
+            {currentQuestion ? (
+                <DailyQuestion currentQuestion={currentQuestion} />
+            ) : (
+                <QuestionSetter setCurrentQuestion={setCurrentQuestion} />
+            )}
         </div>
     );
 }
