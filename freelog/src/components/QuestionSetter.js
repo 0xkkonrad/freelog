@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-
-function QuestionSetter({ setCurrentQuestion }) {
+function QuestionSetter({ addQuestion }) {
     const [userInput, setUserInput] = useState("");
 
     return (
@@ -16,12 +15,12 @@ function QuestionSetter({ setCurrentQuestion }) {
                 />
                 <button
                     onClick={() => {
-                        setCurrentQuestion(userInput);
+                        addQuestion(userInput);
                         setUserInput("");
                     }}
                     className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
                 >
-                    Set Question
+                    Add Question
                 </button>
             </div>
         </div>
